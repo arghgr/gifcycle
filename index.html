@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>GifCycle</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: url('./catgifs/catownwhackamole.gif');
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var gifs = [
+        "./catgifs/dogkitten.gif",
+        "./catgifs/copycat.gif",
+        "./catgifs/catownwhackamole.gif"
+      ];
+      var counter = 0;
+
+      function cycler() {
+        document.body.style.backgroundImage = "url('" + gifs[counter] + "')";
+        (counter === gifs.length - 1) ? counter = 0 : counter += 1;
+      };
+
+      document.addEventListener('DOMContentLoaded', setInterval(cycler, 3000));
+    </script>
+  </body>
+</html>
